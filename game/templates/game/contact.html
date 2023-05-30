@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Contact{% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+
+    <h2>Contact Me</h2>
+            <br><br>
+        <h3>Email</h3>
+        <ul>
+            <li>
+                <p>prashantprashant @ hotmail . com</p>
+            </li>
+        </ul>
+        <br><br>
+        <h3>Cellular</h3>
+        <ul>
+            <li>
+                <p>9 9 5 3 9 4 5 4 1 1</p>
+            </li>
+        </ul>
+        <br><br>
+        <h3>LinkedIn</h3>
+        <ul>
+            <li>
+                <a href="https://{{ 'www.linkedin.com/in/prashant-das-8b282b169' }}" target="_blank">Prashant's LinkedIn Profile</a>
+            </li>
+        </ul>
+        <br><br>
+        
+    <footer>
+      <div class="row">
+        <div class="col-10">
+          {{ date }}
+        </div>
+      </div>
+    </footer>
+
+    {% endblock %}
+  </body>
+</html>

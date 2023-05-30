@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Play{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}
+
+    <h2>Play the game</h2>
+    <div class="row">
+        <div class="col-4">
+            <div class="border border-secondary border-4 rounded-3 p-3 m-1">
+
+
+                {% if not checker %}
+                <br>
+                <form action="." method="POST">
+                    <div class="form-floating">
+                        {% csrf_token %}
+                        {{ my_form|crispy }}
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </div>
+                </form>
+                {% else %}
+                
+                <button type="submit" class="btn btn-secondary"><a href="{% url 'home' %}"><div class="text-bg-secondary">Home</div></a></button>
+
+                {% endif %}
+            </div>
+
+
+        </div>
+
+        <div class="col-6 offset-2">
+            {% if data %}
+            <div class="border border-secondary border-4 rounded-3 p-3 m-1">
+                {% for each in data %}
+                <h4>{{ each }}</h4>
+                {% endfor %}
+
+            </div>
+            {% else %}
+            <div class="border border-secondary border-4 rounded-3 p-3 m-1">
+                <h4>{{ starter }}</h4>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+
+    {% endblock %}
+</body>
+
+</html>

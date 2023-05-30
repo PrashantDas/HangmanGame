@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Home{% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    
+    <div class="row">
+        <div class="col-4">
+            <div class="border border-secondary border-4 rounded-3 p-3 m-3">
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn btn-secondary btn-lg" role="button" ><a href="{% url 'entry' %}">
+                      <div class="text-bg-secondary">Play</div>
+                    </a></button>
+                    </div>
+            </div>
+        </div>
+        <div class="col-7 offset-1">
+            <div class="border border-secondary border-4 rounded-3 p-2">
+              <img src="https://drive.google.com/uc?export=download&id=18eONvERWWmI_goNl0tuYAV0PsFo48m1v" alt="guillotine">
+                <!-- <img src="{% static 'game/hangman.jpg' %}" alt="hangman_image"> -->
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
