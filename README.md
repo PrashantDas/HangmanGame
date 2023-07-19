@@ -1,2 +1,3 @@
-# HangmanGame
-A word-game written in Python, deployed using Django.
+# HangmanGame, status - Deployed and live
+
+https://prashant-hangman-game.vercel.app/
